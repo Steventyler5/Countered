@@ -61,21 +61,19 @@ namespace Countered.Controllers
                 matchList.Add(matchLoss);
             }
 
-
-            //if (givenName != null)
-            //{
-            //    stats = stats.Where(st => st.ChampName == givenName);
-            //}
+            if (givenName == null)
+            {
+                var nameList = (from mp in _context.MatchParticipant
+                             select mp.ChampName).Distinct();
+                return Ok(nameList);
+            }
 
             return Ok(matchList);
         }
 
+
         // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        
 
         // POST api/values
         [HttpPost]
