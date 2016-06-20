@@ -13,6 +13,7 @@ Countered.controller('MatchupController', [
 			.then(
 				(matchups) => {
 					console.log(matchups);
+					$scope.MatchupObj = matchups;
 				}
 			)
 		}
