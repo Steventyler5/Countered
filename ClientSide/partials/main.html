@@ -1,4 +1,8 @@
 <div ng-init="LoadNames()"></div>
-<div ng-repeat="name in nameList">
-	{{ name }}
+<div class="container">
+	<div class="row">
+		<div ng-repeat="name in nameList" class="col-md-1">
+			<img src="http://ddragon.leagueoflegends.com/cdn/6.11.1/img/champion/{{ name }}.png" width="60px" ng-click="GetMatchup(name)">
+		</div>
+	</div>
 </div>
