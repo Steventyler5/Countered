@@ -2,7 +2,9 @@
 <div class="container">
 	<div class="row">
 		<div ng-repeat="name in nameList" class="col-md-1">
-			<img src="http://ddragon.leagueoflegends.com/cdn/6.11.1/img/champion/{{ name }}.png" width="60px" ng-click="GetMatchup(name)">
+			<a href="#/matchup">
+				<img ng-src="http://ddragon.leagueoflegends.com/cdn/6.11.1/img/champion/{{ name }}.png" width="60px" ng-click="GetMatchup(name)">
+			</a>
 		</div>
 	</div>
 </div>

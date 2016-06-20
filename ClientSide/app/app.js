@@ -11,10 +11,10 @@ Countered.config(['$routeProvider',
 				templateUrl : 'partials/main.html',
 				controller: 'MainController'
 			})
-			// .when('/create', {
-			// 	templateUrl : 'partials/newFigurine.html',
-			// 	controller: 'NewFigurineController'
-			// })
+			.when('/matchup', {
+				templateUrl : 'partials/matchup.html',
+				controller: 'MatchupController'
+			})
 			// .when('/register', {
 			// 	templateUrl : 'partials/register.html',
 			// 	controller: 'RegistrationController'
