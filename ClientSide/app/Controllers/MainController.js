@@ -2,11 +2,58 @@ Countered.controller('MainController', [
 	'$http', 
 	'$scope',
 	'LoadNames',
+	'PassChamp',
 
-	function($http, $scope, LoadNames) {
+	function($http, $scope, LoadNames, PassChamp) {
 
 		$scope.GetMatchup = (string) => {
-			console.log(string)
+			console.log("GM string", string);
+			switch (string) {
+				case "MonkeyKing":
+					string = "Wukong";
+					break;
+
+				case "FiddleSticks":
+					string = "Fiddlesticks";
+					break;
+
+				case "Leblanc":
+					string = "LeBlanc";
+					break;
+
+				case "Khazix":
+					string = "KhaZix";
+					break;
+
+				case "Chogath":
+					string = "ChoGath";
+					break;
+
+				case "DrMundo":
+					string = "Dr. Mundo";
+					break;
+
+				case "TahmKench":
+					string = "Tahm Kench";
+					break;	
+
+				case "XinZhao":
+					string = "Xin Zhao";
+					break;
+
+				case "MasterYi":
+					string = "Master Yi";
+					break;
+
+				case "LeeSin":
+					string = "Lee Sin";
+					break;
+
+				case "JarvanIV":
+					string = "Jarvan IV";
+					break;
+			}
+			PassChamp.setChampString(string);
 		}
 
 		$scope.LoadNames = () => {
