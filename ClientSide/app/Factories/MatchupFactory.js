@@ -49,10 +49,10 @@ Countered.factory('Matchup', function($q, $http) {
 			                 categories.push(masterObject[matchup].ChampName);
 			                 dollars.push(Math.round(masterObject[matchup].winPercent * 100));
 			                 if (masterObject[matchup].winPercent > 0.6) {
-			                    colors.push("#008000");
+			                    colors.push("#00aa00");
 			                 }
 			                 if (masterObject[matchup].winPercent <= 0.6 && masterObject[matchup].winPercent > 0.4) {
-			                    colors.push("#ffff00");
+			                    colors.push("#cccc00");
 			                 }
 			                 if (masterObject[matchup].winPercent <= 0.4) {
 			                    colors.push("#ff0000");
@@ -97,7 +97,7 @@ Countered.factory('Matchup', function($q, $http) {
                                  'y2':function(d){ return d.y2; },
                             })
                           //Grid line styles
-                          .style({'stroke':'#adadad','stroke-width':'1px'});
+                          .style({'stroke':'#cdcdcd','stroke-width':'1px'});
 
         var xAxis = d3.svg.axis();
             xAxis
@@ -148,7 +148,7 @@ Countered.factory('Matchup', function($q, $http) {
                             .data(dollars)
                             .enter()
                             .append('text')
-                            .attr({'x':function(d) {return xscale(d)-200; },'y':function(d,i){ return yscale(i)+35; }})
+                            .attr({'x':function(d) {return xscale(d)-100; },'y':function(d,i){ return yscale(i)+35; }})
                             .text(function(d){ return d+"%"; }).style({'fill':'#000','font-size':'14px'});
 	                	resolve(masterObject);
 	                },
