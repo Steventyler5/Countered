@@ -73,6 +73,7 @@ Countered.controller('MainController', [
 						noSpacesList.push(name);
 					});
 					$scope.nameList = noSpacesList;
+					$scope.nameList.sort();
 					console.log("NL", $scope.nameList);
 				}
 			)
