@@ -1,10 +1,16 @@
 <div ng-init="LoadNames()"></div>
 <div class="container">
-	<div class="row">
+<div class="row">
+<div class="col-xs-10 col-xs-offset-1 shadowed">
+	<div id="banner"><div class="banner-splash">Countered!</div></div>
+	<div class="divisor">Select a Champion below to calculate head to head win-rates.</div>
+	<div class="row champ-grid">
 		<div ng-repeat="name in nameList" class="col-xs-1 col-sm-1 col-md-1" style="margin-bottom: 10px">
 			<a href="#/matchup">
 				<img ng-src="http://ddragon.leagueoflegends.com/cdn/6.11.1/img/champion/{{ name }}.png" width="60px" ng-click="GetMatchup(name)" data-toggle="tooltip" data-placement="bottom" title="{{ name }}" tooltip>
 			</a>
 		</div>
+	</div>
+	</div>
 	</div>
 </div>
