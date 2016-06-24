@@ -1,3 +1,78 @@
 body {
-	background-color: #3985ef;
+	/*background-color: #3985ef;*/
+	background-color: #000;
+	background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/background.jpg");
+	background-repeat: no-repeat;
+	/*background-size: cover;*/
+	background-position: center;
+}
+
+div#wrapper {
+	background-color: #c4e3f7;
+	padding-top: 50px;
+	padding-left: -25px;
+	height: 570px;
+	border-radius: 0 0 15px 15px;
+}
+
+div#banner {
+	background-image: url("../images/pantheon-smite-banner.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 15px 15px 0 0;
+	height: 250px;
+	color: #ccc;
+	padding-top: 55px;
+	font-family: 'Sorts Mill Goudy', serif;
+}
+
+div.fight-banner {
+	background-image: url("../images/fight-banner.jpeg");
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	border-radius: 15px 15px 0 0;
+	height: 180px;
+	width: 100%;
+	/*margin-top: 30px;*/
+	color: #ccc;
+	padding-top: 55px;
+
+}
+
+
+div.banner-splash {
+	color: #ccc;
+	text-align: right;
+	/*margin-top: 75px;*/	
+	margin-right: 55px;
+	font-size: 54px;
+}
+
+div.champ-grid {
+	background-color: #c4e3f7;
+	margin: 0 0 50px 0;
+	padding: 30px 30px 10px 10px;
+	border-radius: 0 0 15px 15px;
+}
+
+div.divisor {
+	background-color: #000;
+	color: #ccc;
+	text-align: center;
+	width: 100%;
+	padding: 15px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.small-divisor {
+	padding: 8px;
+}
+
+.shadowed {
+	box-shadow: 0px 16px 20px 6px #000000;
+	padding: 0 0 0 0;
+	border-radius: 15px;
+	margin-top: 25px;
 }
