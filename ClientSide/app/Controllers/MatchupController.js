@@ -5,10 +5,10 @@ Countered.controller('MatchupController', [
 	'Matchup',
 
 	function($http, $scope, PassChamp, Matchup) {
-		$scope.ChampName = PassChamp.getChampString();
+		$scope.ChampNameString = PassChamp.getChampString();
 
 		$scope.LoadMatchup = () => {
-			$scope.ChampName = $scope.ChampName.replace(" ", "+");
+			$scope.ChampName = $scope.ChampNameString.replace(" ", "+");
 			Matchup($scope.ChampName)
 			.then(
 				(matchups) => {
