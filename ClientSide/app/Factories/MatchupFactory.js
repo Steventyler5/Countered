@@ -29,8 +29,8 @@ Countered.factory('Matchup', function($q, $http) {
                 				masterObject[game.Champ2Name].total ++;
             				}
        	 				})
-	       	 			var categories= [""];
-	       				var dollars = [""];
+	       	 			var champions= [""];
+	       				var percentage = [""];
 	        			var colors = [""];
 	        			for (var matchup in masterObject){
 	        				if (Object.keys(masterObject).length > 20) {
@@ -46,8 +46,8 @@ Countered.factory('Matchup', function($q, $http) {
 			                 // if (masterObject[matchup].winPercent = 0) {
 			                    // delete masterObject[matchup];
 			                 // }
-			                 categories.push(masterObject[matchup].ChampName);
-			                 dollars.push(Math.round(masterObject[matchup].winPercent * 100));
+			                 champions.push(masterObject[matchup].ChampName);
+			                 percentage.push(Math.round(masterObject[matchup].winPercent * 100));
 			                 if (masterObject[matchup].winPercent > 0.6) {
 			                    colors.push("#00aa00");
 			                 }
@@ -73,11 +73,11 @@ Countered.factory('Matchup', function($q, $http) {
                         .range([0,720]);
 
         var yscale = d3.scale.linear()
-                        .domain([0,categories.length])
+                        .domain([0,champions.length])
                         .range([0,500]);
 
         var colorScale = d3.scale.quantize()
-                        .domain([0,categories.length])
+                        .domain([0,champions.length])
                         .range(colors);
 
         var canvas = d3.select('#wrapper')
@@ -110,8 +110,8 @@ Countered.factory('Matchup', function($q, $http) {
                 .orient('left')
                 .scale(yscale)
                 .tickSize(2)
-                .tickFormat(function(d,i){ return categories[i]; })
-                .tickValues(d3.range(categories.length));
+                .tickFormat(function(d,i){ return champions[i]; })
+                .tickValues(d3.range(champions.length));
 
         var y_xis = canvas.append('g')
                           .attr("transform", "translate(150,0)")
@@ -128,7 +128,7 @@ Countered.factory('Matchup', function($q, $http) {
                             .attr("transform", "translate(150,-27)")
                             .attr('id','bars')
                             .selectAll('rect')
-                            .data(dollars)
+                            .data(percentage)
                             .enter()
                             .append('rect')
                             .attr('height',19)
@@ -138,18 +138,19 @@ Countered.factory('Matchup', function($q, $http) {
 
 
         var transit = d3.select("svg").selectAll("rect")
-                            .data(dollars)
+                            .data(percentage)
                             .transition()
                             .duration(1500) 
                             .attr("width", function(d) {return xscale(d); });
 
         var transitext = d3.select('#bars')
                             .selectAll('text')
-                            .data(dollars)
+                            .data(percentage)
                             .enter()
                             .append('text')
                             .attr({'x':function(d) {return xscale(d)-100; },'y':function(d,i){ return yscale(i)+35; }})
                             .text(function(d){ return d+"%"; }).style({'fill':'#000','font-size':'14px'});
+	                	
 	                	resolve(masterObject);
 	                },
 	                (error) => reject(error)
